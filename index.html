@@ -1,22 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Angela's Portfolio</title>
-</head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Review for Rahul Kangane Photography</title>
+        <style>
+            body {
+                  font-family: "Poppins", sans-serif;
+                        background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
+                              text-align: center;
+                                    padding: 20px;
+                                          color: #222;
+                                              }
+                                                  h2 {
+                                                        color: #1a237e;
+                                                              margin-bottom: 10px;
+                                                                  }
+                                                                      p {
+                                                                            font-size: 15px;
+                                                                                  color: #333;
+                                                                                      }
+                                                                                          .card {
+                                                                                                background: white;
+                                                                                                      padding: 20px;
+                                                                                                            margin: 15px auto;
+                                                                                                                  border-radius: 15px;
+                                                                                                                        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                                                                                                                              max-width: 420px;
+                                                                                                                                    transition: transform 0.2s;
+                                                                                                                                        }
+                                                                                                                                            .card:hover {
+                                                                                                                                                  transform: scale(1.02);
+                                                                                                                                                      }
+                                                                                                                                                          button {
+                                                                                                                                                                background: #4285F4;
+                                                                                                                                                                      color: white;
+                                                                                                                                                                            border: none;
+                                                                                                                                                                                  padding: 10px 18px;
+                                                                                                                                                                                        border-radius: 8px;
+                                                                                                                                                                                              cursor: pointer;
+                                                                                                                                                                                                    margin-top: 10px;
+                                                                                                                                                                                                          font-size: 14px;
+                                                                                                                                                                                                              }
+                                                                                                                                                                                                                  button:hover {
+                                                                                                                                                                                                                        background: #3367D6;
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                .footer {
+                                                                                                                                                                                                                                      margin-top: 25px;
+                                                                                                                                                                                                                                            font-size: 13px;
+                                                                                                                                                                                                                                                  color: #666;
+                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                        </style>
+                                                                                                                                                                                                                                                        </head>
+                                                                                                                                                                                                                                                        <body>
+                                                                                                                                                                                                                                                          <h2>⭐ Share your experience!</h2>
+                                                                                                                                                                                                                                                            <p>Thanks for attending an event with <strong>Anchor Vipul Ranaware</strong><br>for <strong>Rahul Kangane Photography</strong>.</p>
+                                                                                                                                                                                                                                                              <p>Select a review below — then click <b>“Copy & Post”</b> to share on Google.</p>
 
-<body>
-  <h1>Angela Yu's Portfolio</h1>
-  <h2>I'm a Web Developer</h2>
-  <hr />
-  <h3><a href="./public/movie-ranking.html">Movie Ranking Project</a></h3>
-  <img src="./assets/images/movie-ranking.png" height="200" alt="movie ranking project preview"/>
-  <h3><a href="./public/birthday-invite.html">Birthday Invite Project</a></h3>
-  <img src="./assets/images/birthday-invite.png" height="200" alt="birthday invite project preview"/>
-  <hr />
-  <a href="./public/about.html">About Me</a>
-  <a href="./public/contact.html">Contact Me</a>
-</body>
+                                                                                                                                                                                                                                                                <div class="card">
+                                                                                                                                                                                                                                                                    <p>⭐️⭐️⭐️⭐️⭐️ Outstanding hosting by Anchor Vipul Ranaware! The event energy and coordination were top-notch. Highly recommend Rahul Kangane Photography team!</p>
+                                                                                                                                                                                                                                                                        <button onclick="copyAndRedirect(this)">Copy & Post</button>
+                                                                                                                                                                                                                                                                          </div>
 
-</html>
+                                                                                                                                                                                                                                                                            <div class="card">
+                                                                                                                                                                                                                                                                                <p>⭐️⭐️⭐️⭐️⭐️ Vipul made the event super fun and engaging! Great photos and perfect arrangements by Rahul Kangane Photography.</p>
+                                                                                                                                                                                                                                                                                    <button onclick="copyAndRedirect(this)">Copy & Post</button>
+                                                                                                                                                                                                                                                                                      </div>
+
+                                                                                                                                                                                                                                                                                        <div class="card">
+                                                                                                                                                                                                                                                                                            <p>⭐️⭐️⭐️⭐️⭐️ Amazing teamwork between Vipul and Rahul Kangane Photography! Loved every moment — highly recommended.</p>
+                                                                                                                                                                                                                                                                                                <button onclick="copyAndRedirect(this)">Copy & Post</button>
+                                                                                                                                                                                                                                                                                                  </div>
+
+                                                                                                                                                                                                                                                                                                    <script>
+                                                                                                                                                                                                                                                                                                        function copyAndRedirect(button) {
+                                                                                                                                                                                                                                                                                                              const text = button.previousElementSibling.innerText;
+                                                                                                                                                                                                                                                                                                                    navigator.clipboard.writeText(text).then(() => {
+                                                                                                                                                                                                                                                                                                                            alert("Copied! Now paste it on Google Reviews.");
+                                                                                                                                                                                                                                                                                                                                    window.location.href = "https://www.google.com/search?sca_esv=30db70402d7c8856&cs=0&output=search&kgmid=/g/11ycd99tzp&q=Rahul+Kangane+Photography&shndl=30&shem=lcuae,uaasie&source=sh/x/loc/uni/m1/1&kgs=d5ef9f0a559b5e4a&ibp=gwp;0,6#vhid=/g/11ycd99tzp&vssid=rllrl";
+                                                                                                                                                                                                                                                                                                                                          });
+                                                                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                                                                                </script>
+
+                                                                                                                                                                                                                                                                                                                                                  <div class="footer">
+                                                                                                                                                                                                                                                                                                                                                      © 2025 Anchor Vipul Ranaware | Crafted for Rahul Kangane Photography
+                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                                                                                                        </html>
+                                                                                                                                                                                                                                                                                                                                                        
