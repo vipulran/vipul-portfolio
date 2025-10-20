@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anchor Vipul Ranaware - Reviews</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(145deg, #000000, #1a1a1a);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header img {
+      width: 180px;
+      margin-top: 20px;
+      filter: drop-shadow(0 0 15px gold);
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      border-bottom: 2px solid gold;
+    }
+    .tab {
+      padding: 12px 25px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ccc;
+      transition: 0.3s;
+    }
+    .tab.active {
+      color: gold;
+      border-bottom: 3px solid gold;
+    }
+    .slider-wrapper {
+      display: none;
+    }
+    .slider-wrapper.active {
+      display: block;
+    }
+    .card {
+      background: #111;
+      color: #f5f5f5;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      margin: 15px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+    }
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(90deg, #c9a12f, #ffcc00);
+      color: black;
+      border: none;
+      padding: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(90deg, #ffda47, #ffb300);
+      transform: scale(1.03);
+    }
+    .popup, .thankyou {
+      visibility: hidden;
+      background: gold;
+      color: black;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 10px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      z-index: 999;
+      transition: visibility 0s, opacity 0.4s ease;
+      opacity: 0;
+    }
+    .popup.show, .thankyou.show {
+      visibility: visible;
+      opacity: 1;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      color: #bba76f;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 215, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://vipulran.github.io/vipul-portfolio/assets/logo.png" alt="Anchor Vipul Ranaware Logo">
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('english')">English</div>
+    <div class="tab" onclick="showTab('hindi')">हिन्दी</div>
+    <div class="tab" onclick="showTab('marathi')">मराठी</div>
+  </div>
+
+  <!-- English Reviews -->
+  <div id="english" class="slider-wrapper active">
+    <div id="english-reviews"></div>
+  </div>
+
+  <!-- Hindi Reviews -->
+  <div id="hindi" class="slider-wrapper">
+    <div id="hindi-reviews"></div>
+  </div>
+
+  <!-- Marathi Reviews -->
+  <div id="marathi" class="slider-wrapper">
+    <div id="marathi-reviews"></div>
+  </div>
+
+  <div id="popup" class="popup">✅ Copied! Now paste it in Google Reviews.</div>
+  <div id="thankyou" class="thankyou"></div>
+
+  <footer>© 2025 Anchor Vipul Ranaware</footer>
+
+  <script>
+    const reviews = {
+      english: [
+        '⭐️⭐️⭐️⭐️⭐️ Incredible energy by Anchor Vipul Ranaware! Professional, engaging, and unforgettable.',
+        '⭐️⭐️⭐️⭐️⭐️ Vipul Ranaware made our event special! His bilingual hosting was top-notch and lively.',
+        '⭐️⭐️⭐️⭐️⭐️ Fantastic anchor! Vipul’s charm and professionalism made our event unforgettable.',
+        '⭐️⭐️⭐️⭐️⭐️ Highly engaging and interactive host, perfect for any corporate or wedding event!',
+        '⭐️⭐️⭐️⭐️⭐️ Loved his energy! Vipul connected beautifully with the crowd and made it memorable.',
+        '⭐️⭐️⭐️⭐️⭐️ Vipul is the definition of professionalism! Highly recommend his anchoring services.',
+        '⭐️⭐️⭐️⭐️⭐️ Great bilingual anchor, handled audience transitions effortlessly.',
+        '⭐️⭐️⭐️⭐️⭐️ Excellent command over stage and audience. Perfect blend of humor and professionalism.',
+        '⭐️⭐️⭐️⭐️⭐️ One of the best hosts we have seen — energetic, well-spoken, and spontaneous!',
+        '⭐️⭐️⭐️⭐️⭐️ Vipul Ranaware brings life to every event he hosts! Highly recommended!',
+        '⭐️⭐️⭐️⭐️⭐️ Perfect balance of fun and professionalism! Vipul kept everyone engaged!',
+        '⭐️⭐️⭐️⭐️⭐️ Vipul’s energy level was contagious! Everyone enjoyed his hosting.',
+        '⭐️⭐️⭐️⭐️⭐️ Super talented anchor with great communication skills!',
+        '⭐️⭐️⭐️⭐️⭐️ Vipul handled our audience perfectly — true professional!',
+        '⭐️⭐️⭐️⭐️⭐️ Great experience working with Vipul! Highly recommend!'
+      ],
+      hindi: [
+        '⭐️⭐️⭐️⭐️⭐️ एंकर विपुल रनवरे ने कार्यक्रम को शानदार बनाया! उनकी होस्टिंग और जोश कमाल का था।',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे की एंकरिंग ने पूरे माहौल को ऊर्जा से भर दिया। शानदार अनुभव!',
+        '⭐️⭐️⭐️⭐️⭐️ पेशेवर और जोशीले एंकर विपुल रनवरे हर कार्यक्रम को खास बना देते हैं।',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे ने पूरे कार्यक्रम में दर्शकों को जोड़े रखा, शानदार!',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे का आत्मविश्वास और बोलने का तरीका बहुत अच्छा है।',
+        '⭐️⭐️⭐️⭐️⭐️ मंच पर उनका नियंत्रण और ऊर्जा दोनों लाजवाब थे!',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे जैसे एंकर हर इवेंट को यादगार बना देते हैं!',
+        '⭐️⭐️⭐️⭐️⭐️ बहुत बढ़िया होस्ट! सभी को जोड़े रखा और हँसी-खुशी का माहौल बनाया।',
+        '⭐️⭐️⭐️⭐️⭐️ शानदार अनुभव! विपुल रनवरे की स्टेज प्रेजेंस कमाल की है।',
+        '⭐️⭐️⭐️⭐️⭐️ प्रोफेशनल और चार्मिंग — परफेक्ट एंकरिंग!',
+        '⭐️⭐️⭐️⭐️⭐️ जोश और आत्मविश्वास से भरे एंकर विपुल रनवरे!',
+        '⭐️⭐️⭐️⭐️⭐️ उनके संवाद और टाइमिंग बेहतरीन हैं!',
+        '⭐️⭐️⭐️⭐️⭐️ सभी को जोड़े रखने की अद्भुत कला है विपुल में!',
+        '⭐️⭐️⭐️⭐️⭐️ बहुत ही शानदार एंकरिंग! हर कोई खुश था।',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे की मेजबानी कार्यक्रम की जान बन गई!'
+      ],
+      marathi: [
+        '⭐️⭐️⭐️⭐️⭐️ अँकर विपुल रनवरे यांनी कार्यक्रमाची शान वाढवली! त्यांचा आत्मविश्वास आणि मजेशीर अंदाज अप्रतिम होता.',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे यांच्या सुंदर सूत्रसंचालनाने संपूर्ण कार्यक्रम रंगतदार झाला!',
+        '⭐️⭐️⭐️⭐️⭐️ जबरदस्त ऊर्जा आणि व्यावसायिक सादरीकरण — कार्यक्रमाचा आत्माच बनले!',
+        '⭐️⭐️⭐️⭐️⭐️ प्रेक्षकांशी संवाद साधण्याची त्यांची शैली अतिशय प्रभावी होती!',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे यांच्या सूत्रसंचालनाने कार्यक्रम अधिकच उठावदार झाला.',
+        '⭐️⭐️⭐️⭐️⭐️ मंचावरील आत्मविश्वास आणि सादरीकरण अप्रतिम!',
+        '⭐️⭐️⭐️⭐️⭐️ कार्यक्रमातील ऊर्जा आणि जोश अतिशय संसर्गजन्य होता.',
+        '⭐️⭐️⭐️⭐️⭐️ प्रत्येक वयोगटातील लोकांशी जोडण्याची क्षमता विलक्षण.',
+        '⭐️⭐️⭐️⭐️⭐️ त्यांच्या जोशपूर्ण सादरीकरणाने संपूर्ण वातावरण रंगले.',
+        '⭐️⭐️⭐️⭐️⭐️ खूप सुंदर सूत्रसंचालन — कार्यक्रम अधिक संस्मरणीय बनवला!',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल यांच्या सादरीकरणाने प्रेक्षक मंत्रमुग्ध झाले.',
+        '⭐️⭐️⭐️⭐️⭐️ उत्तम संवाद कौशल्य आणि उत्साही सादरीकरण!',
+        '⭐️⭐️⭐️⭐️⭐️ प्रेक्षकांचा सहभाग वाढवण्यात विपुल यशस्वी झाले.',
+        '⭐️⭐️⭐️⭐️⭐️ व्यावसायिकता आणि हसरेपणा — परफेक्ट कॉम्बिनेशन!',
+        '⭐️⭐️⭐️⭐️⭐️ विपुल रनवरे यांच्या सूत्रसंचालनाने संपूर्ण कार्यक्रम चमकला!'
+      ]
+    };
+
+    const thankyouMessages = {
+      english: '🙏 Thank you for reviewing Anchor Vipul Ranaware!',
+      hindi: '🙏 एंकर विपुल रनवरे की समीक्षा करने के लिए धन्यवाद!',
+      marathi: '🙏 अँकर विपुल रनवरे यांचा अभिप्राय दिल्याबद्दल धन्यवाद!'
+    };
+
+    function populateReviews(lang) {
+      const container = document.getElementById(`${lang}-reviews`);
+      container.innerHTML = '';
+      reviews[lang].forEach(text => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<p>${text}</p><button onclick=\"copyAndRedirect(this,'${lang}')\">Copy & Post Review</button>`;
+        container.appendChild(card);
+      });
+    }
+
+    ['english', 'hindi', 'marathi'].forEach(populateReviews);
+
+    function showTab(lang) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.slider-wrapper').forEach(c => c.classList.remove('active'));
+      document.querySelector(`[onclick="showTab('${lang}')"]`).classList.add('active');
+      document.getElementById(lang).classList.add('active');
+    }
+
+    function copyAndRedirect(button, lang) {
+      const text = button.previousElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const popup = document.getElementById('popup');
+        popup.classList.add('show');
+        setTimeout(() => {
+          popup.classList.remove('show');
+          const thankyou = document.getElementById('thankyou');
+          thankyou.innerText = thankyouMessages[lang];
+          thankyou.classList.add('show');
+          setTimeout(() => {
+            thankyou.classList.remove('show');
+            window.location.href = "https://www.google.com/search?q=my%20business&hl=en&authuser=0#lrd=0x0:0x0,1,,,";
+          }, 2000);
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
